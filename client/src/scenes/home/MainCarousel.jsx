@@ -6,12 +6,11 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { shades } from '../../theme';
 
 // Import all imgs from assets folder
-const importAll = () => {
+const importAll = (r) => 
 	r.keys().reduce((acc, item) => {
 		acc[item.replace('./', '')] = r(item);
 		return acc;
 	}, {});
-};
 
 export const heroTextureImports = importAll(
 	require.context('../../assets', false, /\.(png|jpe?g|svg)$/)
